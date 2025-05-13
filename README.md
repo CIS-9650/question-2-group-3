@@ -72,6 +72,4 @@ We then:
 
 ---
 
-## 📁 Files in This Repo
 
->>>>>>> bb17100 (Add detailes via the command line to the README)
