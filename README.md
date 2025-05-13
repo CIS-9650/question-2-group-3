@@ -5,12 +5,6 @@
 ## 🧾 Project Title
 **S&P 500 Data Enrichment via Web Scraping and API Calls**
 
-## 👨‍💻 Team Information
-**Group 3**  
-Course: CIS 9650  
-Semester: Spring 2025
-
----
 
 ## 📘 Overview
 
