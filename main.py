@@ -49,3 +49,10 @@ adj_table = df.iloc[:100, :-1]
 
 # export the "adj_table" dataframe as a CSV file type to download locally
 adj_table.to_csv('most_traded_companies.csv', index = False)
+
+#this is combining it to sql lite database
+sql_data = sqlite3.connect('final_results_sp500.db')
+final_results_sp500.to_sql('sp500_companies', sql_data, if_exists='replace', index=False)
+sql_data.close()
+
+print("The Data has been saved to combine the wikipedia results and the api results for SP 500")
