@@ -10,6 +10,7 @@ import time
 import sqlite3
 import certifi
 import ssl
+from getpass import getpass
 
 # Create a custom SSL context using certifi's CA bundle
 ssl_context = ssl.create_default_context(cafile=certifi.where())
@@ -51,8 +52,13 @@ adj_table = df.iloc[:100, :-1]
 adj_table.to_csv('most_traded_companies.csv', index = False)
 
 # Twelve Data API Configuration
-api_key = '1c6673da2a964c68b0b2af29d7e08448'  # Replace with your actual key
+# Prompt user for API key
+api_key = getpass("Enter your Twelve Data API key (input hidden): ")
 api_url = 'https://api.twelvedata.com/time_series'
+
+# Assuming adj_table is already defined (a DataFrame with a 'Symbol' column)
+symbols = adj_table['Symbol'].tolist()[:50]
+api_results = []
 
 symbols = adj_table['Symbol'].tolist()[:50]  # Grabs first 50 symbols
 
